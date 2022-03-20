@@ -1,0 +1,398 @@
+
+
+body {
+    background-color:bisque;
+    background-size: 0;
+}
+
+.otsikko {
+    position: absolute;
+    left:25%;
+    z-index: 1;
+    top: 5%;
+    width:50%;
+        
+}
+.devOtsikko {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  top: 5%; 
+}
+
+.rightSideLogo {
+    position: absolute;
+    right:5%;
+    width: 18%;
+    top: 20%;
+    
+}
+
+.kupla {
+position: absolute;
+top: 15%;
+right:12%;
+z-index: 1;
+
+}
+.kolikko_kupla {
+position: absolute;
+top: 15%;
+right:12%;
+z-index: 1;
+}
+.huti_kupla {
+position: absolute;
+top: 15%;
+right:12%;
+z-index: 1;
+}
+.aarre_kupla {
+position: absolute;
+top: 15%;
+right:12%;
+z-index: 1;
+}
+.lapio_kupla {
+position: absolute;
+top: 15%;
+right:12%;
+z-index: 1;
+}
+.videonappi {
+    position: absolute;
+    top:15%;
+    left:7%;
+    width: 10%;
+    z-index: 1;
+}
+.karttanappi {
+    position: absolute;
+    top:45%;
+    left:7%;
+    width: 10%;
+    z-index: 1;
+
+}
+
+.teamnappi {
+    position: absolute;
+    top:75%;
+    left:7%;
+    width: 10%;
+    z-index: 1;
+
+}
+
+
+#fade {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  opacity: .80;
+}
+
+#light {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 600px;
+  max-height: 360px;
+  margin-left: -300px;
+  margin-top: -180px;
+  border: 2px solid #FFF;
+  background: black;
+  z-index: 1002;
+  overflow: visible;
+}
+
+#boxclose {
+  float: right;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 3px;
+  background: #222222;
+  font-size: 31px;
+  font-weight: bold;
+  line-height: 0px;
+  padding: 11px 3px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  z-index: 1002;
+  opacity: 0.9;
+}
+
+.boxclose:before {
+  content: "×";
+}
+
+#fade:hover ~ #boxclose {
+  display:none;
+}
+
+.test:hover ~ .test2 {
+  display: none;
+}
+.panosOtsikko {
+    position: absolute;
+    top:25%;
+    right:40%;
+    width: 20% 
+}
+.infonappi {
+    position: absolute;
+    top:60%;
+    right:40%;
+    width: 20%
+}
+.deponappi {
+    position: absolute;
+    top:47%;
+    right:40%;
+    width: 20%
+}
+.depofield {
+    position: absolute;
+    top:40%;
+    right:40%;
+    width: 20%
+}
+.depoenable {
+    top:50%;
+    right:40%;
+    width: 20%
+}
+.backnappi {
+    position: absolute;
+    top: 79%;
+    right:40%;
+    width: 20%;
+}
+.rules {
+    position: absolute;
+    top:17%;
+    right:35%;
+    width: 32%;
+}
+.cashOut {
+    position:absolute;
+    left:15%;
+    width:20%;
+}
+.mutebutton {
+    position:absolute;
+    right:10%;
+    width:5%;
+}
+.kolikko {
+    position:absolute;
+    right:15%;
+    width:20%;
+}
+.kolikko:disabled {
+    position:absolute;
+    right:15%;
+    width:20%;
+}
+.gamblelippu {
+    position: absolute;
+    top:19%;
+    left:48.5%;
+    width:3%;
+}
+.gamblelippu_l {
+    position: absolute;
+    top:19%;
+    left:48.5%;
+    width:3%;
+}
+.gamblelippu_w {
+    position: absolute;
+    top:19%;
+    left:48.5%;
+    width:3%;
+}
+.coinbonus {
+    position: absolute;
+    top:30%;
+    left:6%;
+    width: 30%;
+}
+
+.coinresult {
+    position: absolute;
+    top:30%;
+    left:6%;
+    width:30%;
+
+}
+
+.panos1 {
+    position: absolute;
+    top:40%;
+    right:60%;
+    width: 15%
+}
+.panos2 {
+    position: absolute;
+    top:40%;
+    right:42.5%;
+    width: 15%
+}
+.panos5 {
+    position: absolute;
+    top:40%;
+    right:25%;
+    width: 15%
+}
+.spanos1 {
+    position: absolute;
+    top:40%;
+    right:80%;
+    width: 5%
+}
+.spanos2 {
+    position: absolute;
+    top:40%;
+    right:42.5%;
+    width: 5%
+}
+.spanos5 {
+    position: absolute;
+    top:40%;
+    right:25%;
+    width: 5%
+}
+
+button {
+  margin: 0;
+  background: none;
+  border: none;
+  opacity: 0.5;
+  padding: 0%;
+width: 100%;
+}
+.lose{
+  margin: 0;
+
+  background: none;
+  border: none;
+  opacity: 0.5;
+  padding: 0%;
+width: 100%;
+}
+.lose:disabled{
+  margin: 0;
+  background: url("kuvat/ruksi.png") no-repeat;
+  background-size: 100%;
+  border: none;
+  opacity: 1;
+  padding: 0%;
+width: 100%;
+}
+
+    
+
+
+.win{
+  margin: 0;
+
+  background: none;
+  border: none;
+  opacity: 0.5;
+  padding: 0%;
+width: 100%;
+}
+.win:disabled{
+  margin: 0;
+  background: url("kuvat/aarrearkku.png") no-repeat;
+  background-size: 100%;
+  border: none;
+  opacity: 1;
+  padding: 0%;
+width: 100%;
+}
+
+
+
+.lapio{
+  margin: 0;
+
+  background: none;
+  border: none;
+  opacity: 0.5;
+  padding: 0%;
+width: 100%;
+}
+
+.lapio:disabled{
+  margin: 0;
+
+  background: url("kuvat/lapio.png") no-repeat;
+  background-size: 100%;
+  border: none;
+  opacity: 1;
+  padding: 0%;
+width: 100%;
+}
+
+
+.pelialue{
+    position: absolute;
+    left:25%;
+    width: 50%;
+    top: 13%;
+}
+.saldopositio {
+        position: absolute;
+    left:25%;
+    width: 50%;
+    top: 13%;
+}
+
+.cashOut {
+    position: absolute;
+    top: 5%;
+}
+.kolikko {
+    position: absolute;
+    top: 5%;    
+}
+table{
+  position:static;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+  margin-right: auto;
+  background: url("kuvat/kartta.png") no-repeat;
+  background-size: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td{
+  border: none;
+}
+tr{
+  border: none;
+}
+
+.naamat {
+  position: absolute;
+  left:20%;
+}
+
+.Etusivu {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 10%
+}

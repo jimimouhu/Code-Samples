@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+    
+    <body>
+<script> 
+let kenttakoko = 224;
+let rand_alku = 0;
+let rand_loppu = 224;
+let aarteet = 15;
+let kentta = [];
+
+
+// tehdään kenttään 225 palkkia
+for (let indeksi = 0; indeksi<=kenttakoko; indeksi++) {
+    kentta[indeksi] = "Palkki"; // nyt kenttässä on 225 palkkia
+}
+    
+// seuraavaksi lisätään aarteita palkkien alle:
+    let i = 1;
+    let lapiot = 9;
+ while (i <= aarteet && lapiot >= 0) {
+    let rand = Math.floor(Math.random() * rand_loppu) + rand_alku;
+    let lapiorand = Math.floor(Math.random() * rand_loppu) + rand_alku; 
+    kentta[rand] = "Palkki + AARRE";
+    i++;
+    if (lapiorand == rand) {
+        let lapiorand = Math.floor(Math.random() * rand_loppu) + rand_alku;
+        kentta[lapiorand] = "Palkki + LAPIO";
+        lapiot--;
+    } else {
+        kentta[lapiorand] = "Palkki + LAPIO";
+        lapiot--;
+        
+    }
+    
+
+}
+// tulostetaan palkit + aarteet:
+    let tulostus;
+    for (tulostus = 0; tulostus <= kenttakoko; tulostus++) {
+        console.log(kentta[tulostus]);
+    }
+
+     </script>
+
+    </body>
+    
+</html>

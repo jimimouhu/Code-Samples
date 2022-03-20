@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maailmankartta</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+<!-- Kartan CSS -->
+      <style>
+        #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+   <!-- Tässä kartan scripti: -->
+      <script>
+      var kartta, infoWindow;
+      function initMap() {
+        kartta = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 17.9360762, lng: -76.8417961},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Lokaation selvittäminen, jos käyttäjä sallii sijainnin.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            // position variaabeli:
+              var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            // sij. positio karttaan ja ilmoitetaan onnistumisesta:
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Sijainti selvitetty.');
+            infoWindow.open(kartta);
+            kartta.setCenter(pos);
+
+          }, function() {
+            sijaintiError(true, infoWindow, kartta.getCenter());
+          });
+        } else {
+          // Jos selain ei tue sijainnin selvitystä:
+          sijaintiError(false, infoWindow, kartta.getCenter());
+        }
+      }
+
+      function sijaintiError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Salli sijainti käyttääksesi palvelua.' :
+                              'Selaimesi ei tue sijaintipalvelua.');
+        infoWindow.open(kartta);
+      }
+  
+    </script>
+   <!-- Google API koodin haku: -->
+      <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO_zPnK9_9X_SOwXkizVogTtbWNGrp5Ek&callback=initMap">
+    </script>
+  </body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fi">
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8" />
+
+<title>Aarrejahti</title>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<img src="kuvat/logo.png" alt="AARREJAHTI.org" class="otsikko">
+<a href="googlemaps.html" target="_blank"><img src="kuvat/karttanappi.png" id="karttanap" class="karttanappi" alt="googlemaps"></a>
+<a href="teampage.html"><img src="kuvat/teamnappi.png" id="team" class="teamnappi" alt="devteam"></a>
+<img src="kuvat/logoparrot.png" alt="Parrot.jpg" class="rightSideLogo" 
+     id="LogoParrot">
+<img src="kuvat/puhekupla.png" alt="kupla.png" class="kupla"
+     id="puhekupla"> 
+<img src="kuvat/hutiMeni.png" alt="hutimeni.png" class="huti_kupla" id="hutimeni">
+<img src="kuvat/rules.png" alt="rules.png" class="rules" id="rules">
+<img src="kuvat/lapioNote.png" alt="lapio.png" class="lapio_kupla" id="lapiotuli">
+<img src="kuvat/aarreNote.png" alt="aarre.png" class="aarre_kupla" id="aarretuli">
+<img src="kuvat/kolikkokierros.png" alt="kolikko.png" class="kolikko_kupla" id="kolikkotuli">
+<!-- Tässä tehdään videonapille divit -->
+<div id="light">
+<a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+
+<video id="HowToPlayVideo" width="600" controls>
+<source src="kuvat/Aarrevideo.webm" type="video/webm">
+</video>
+
+</div>
+<div id="fade" onClick="lightbox_close();"></div>
+<div>
+  <a href="#" onclick="lightbox_open();"><img src="kuvat/videonappi.png" id="vidnap" class="videonappi" alt="video"> </a>
+</div>
+<!-- Parrot Hidden puhekupla scriptit: -->
+<script>
+const kuva = document.getElementById('LogoParrot');
+const kupla = document.getElementById('puhekupla');
+
+rules.style = 'display: none';
+kolikkotuli.style = 'display: none';
+hutimeni.style = 'display: none';
+lapiotuli.style = 'display: none';
+aarretuli.style = 'display: none';
+
+
+
+puhekupla.style = 'display: none';
+
+kuva.addEventListener('mouseenter', nayta);
+kuva.addEventListener('mouseleave', piilota);
+
+function nayta(evt) {
+	puhekupla.style = 'display: block';
+	
+}
+function piilota(evt) {
+    puhekupla.style = 'display: none';
+}
+</script> 
+
+    
+<script>
+// Scriptiä popup ikkunaan:
+window.document.onkeydown = function(e) {
+  if (!e) {
+    e = event;
+  }
+  if (e.keyCode == 27) {
+    lightbox_close();
+  }
+}
+
+function lightbox_open() {
+  var lightBoxVideo = document.getElementById("HowToPlayVideo");
+  window.scrollTo(0, 0);
+  document.getElementById('light').style.display = 'block';
+  document.getElementById('fade').style.display = 'block';
+  lightBoxVideo.play();
+}
+
+function lightbox_close() {
+  var lightBoxVideo = document.getElementById("HowToPlayVideo");
+  document.getElementById('light').style.display = 'none';
+  document.getElementById('fade').style.display = 'none';
+  lightBoxVideo.pause();
+}
+</script>
+
+
+
+<!--PELI-->
+
+<!--Panos nappulat yms-->
+<input type="number" id="deposit" class="depofield" name="Syötä talletusmäärä..">
+<img src="kuvat/deponappula.png" onmouseover="src='kuvat/deponappula_o.png'" onmouseout="src='kuvat/deponappula.png'" id="deponappi" class="deponappi" alt="depositbutton" onclick="depositFunktio()">
+<img src="kuvat/asetaPanos.png" class="panosOtsikko" alt="panosOtsikko" id="panosOtsikko">
+<img src="kuvat/panos1.png" onmouseover="src='kuvat/panos1_o.png'" onmouseout="src='kuvat/panos1.png'" id="b1" class="panos1" alt="panos1" onclick="ege()">
+<img src="kuvat/panos2.png" onmouseover="src='kuvat/panos2_o.png'" onmouseout="src='kuvat/panos2.png'" id="b2" class="panos2" alt="panos2" onclick="kaks()">
+<img src="kuvat/panos5.png" onmouseover="src='kuvat/panos5_o.png'" onmouseout="src='kuvat/panos5.png'" id="b3" class="panos5" alt="panos5" onclick="viis()">
+<img src="kuvat/info.png" onmouseover="src='kuvat/info_o.png'" onmouseout="src='kuvat/info.png'" id="info" class="infonappi" alt="info" onclick="inforules()">
+<img src="kuvat/sivup1.png" onmouseover="src='kuvat/sivup1_o.png'" onmouseout="src='kuvat/sivup1.png'" id="s1" class="spanos1" alt="spanos1" onclick="egeNew()">
+<img src="kuvat/sivup2.png" onmouseover="src='kuvat/sivup2_o.png'" onmouseout="src='kuvat/sivup2.png'" id="s2" class="spanos2" alt="spanos2" onclick="kaks()">
+<img src="kuvat/sivup5.png" onmouseover="src='kuvat/sivup5_o.png'" onmouseout="src='kuvat/sivup5.png'" id="s3" class="spanos5" alt="spanos5" onclick="viis()">
+<img src="kuvat/takaisin.png" onmouseover="src='kuvat/takaisin_o.png'" onmouseout="src='kuvat/takaisin.png'" id="back" class="backnappi" alt="takaisin" onclick="location.href='index.html';"> 
+<img src="kuvat/mutebutton.png" onmouseover="src='kuvat/mutebutton_o.png'" onmouseout="src='kuvat/mutebutton.png'" class="mutebutton" alt="mutebutton" id="buttonmute" onclick="mutePage()">
+<!-- gamblen kuvakkeet ja "intro-GIF"-->
+<div class="gamblet">
+<img src="kuvat/gamble.gif" id="gamble" class="gamblelippu" alt="gambleGIF">
+<img src="kuvat/flagp.png" id="gamble_l" class="gamblelippu_l" alt="gambleGIF">
+<img src="kuvat/flagA.png" id="gamble_w" class="gamblelippu_w" alt="gambleGIF">
+</div>
+<!-- bonuskierroksen kuvakkeet ja into-GIF -->
+<div class="coinbonus">
+<img src="kuvat/coinflip.gif" id="cointoss" class="cointoss" alt="cointoss">
+<img src="kuvat/2x.png" id="cointoss2" class="ckaks" alt="cointoss2">
+<img src="kuvat/3x.png" id="cointoss3" class="ckolme" alt="cointoss3">
+<img src="kuvat/4x.png" id="cointoss4" class="cnelja" alt="cointoss4">
+<img src="kuvat/5x.png" id="cointoss5" class="cviis" alt="cointoss5">
+</div>
+<!-- piilotetaan yhdessä listassa kuvakkeita aluksi -->
+<script>
+document.getElementById("gamble").style.display = "none";
+document.getElementById("gamble_l").style.display = "none";
+document.getElementById("gamble_w").style.display = "none";
+document.getElementById("back").style.display = "none";
+document.getElementById("cointoss").style.display = "none";
+document.getElementById("cointoss2").style.display = "none";
+document.getElementById("cointoss3").style.display = "none";
+document.getElementById("cointoss4").style.display = "none";
+document.getElementById("cointoss5").style.display = "none";
+document.getElementById("panosOtsikko").style.display = "none";
+document.getElementById("b1").style.display = "none";
+document.getElementById("b2").style.display = "none";
+document.getElementById("b3").style.display = "none";
+document.getElementById("s1").style.display = "none";
+document.getElementById("s2").style.display = "none";
+document.getElementById("s3").style.display = "none";
+</script>
+
+<script>
+
+//Short cut sivuston body osion muuntamiselle.
+    var body = document.querySelector("body");
+
+
+//Algoritmiin tarvittavat muuttujat
+let kenttakoko = 25, rand_alku = 0, rand_loppu = 25, aarteet = 5, lapiot = 0, kentta = [];
+
+//Kentän muuttujat
+let nappejaRivis = 5, counter = 0, y, x, nappi = [], yritys = 3, gridSize = 550, teksti = "", saldo = "";
+
+//Pistemuuttujat
+let score = 0, panos = 0, kerroin = 1;
+let varayritys;
+let voitot;
+let cointoss;
+let bonus_waiter;
+let treasures = 0;
+let depovalue;
+
+function depositFunktio() {
+  depovalue = document.getElementById("deposit").value;
+  if (depovalue < 1) {
+      alert("Syöte on virheellinen.");
+  } else {
+document.getElementById("deponappi").style.display = "none";
+document.getElementById("deposit").style.display = "none";
+document.getElementById("panosOtsikko").style.display = "block";
+document.getElementById("b1").style.display = "block";
+document.getElementById("b2").style.display = "block";
+document.getElementById("b3").style.display = "block";
+  }
+}
+
+//Tästä lähtee pelialueen teko funktio
+function createGrid(){
+
+
+//ensin poistetaan panosten valinnat yms näkyvistä ja näytetään cash-out nappi 
+document.getElementById("gamble").style.display = "none";
+document.getElementById("gamble_l").style.display = "none";
+document.getElementById("gamble_w").style.display = "none";
+document.getElementById("b1").style.display = "none";
+document.getElementById("b2").style.display = "none";
+document.getElementById("b3").style.display = "none";
+document.getElementById("panosOtsikko").style.display = "none";
+
+
+// tehdään kenttään x-määrä palkkeja
+for (let indeksi = 0; indeksi<=kenttakoko; indeksi++) {
+
+      //Lisätään taulukon sisään koodipätkä, mikä tekee nappulan kun se printataan HTML sivulle. Onclick ominaisuuteen määritetty mikä funktio käynnistyy kun nappulaa painetaan.
+    kentta[indeksi] = "<button class = \"lose\" style=\"width: " + (gridSize/nappejaRivis) + "px; height:" + (gridSize/nappejaRivis) + "px\" type=\"button\" id=\"butt2\" onclick=\"lose(this)\" ></button>";
+}
+
+// seuraavaksi lisätään aarteita palkkien alle:
+    let i;
+ for (i = 1; i<=aarteet; i++) {
+    let rand = Math.floor(Math.random() * rand_loppu) + rand_alku;
+    //Lisätään taulukon sisään koodipätkä, mikä tekee nappulan kun se printataan HTML sivulle. Onclick ominaisuuteen määritetty mikä funktio käynnistyy kun nappulaa painetaan.
+    kentta[rand] = "<button class = \"win\" style=\"width: " + (gridSize/nappejaRivis) + "px; height:" + (gridSize/nappejaRivis) + "px\" type=\"button\" id=\"butt\" onclick=\"voitto(this)\" ></button>";
+} 
+
+let kultaboxi = "<button class = \"win\" style=\"width: " + (gridSize/nappejaRivis) + "px; height:" + (gridSize/nappejaRivis) + "px\" type=\"button\" id=\"butt\" onclick=\"voitto(this)\" ></button>";
+ while(lapiot > 0) {
+  let rand2 = Math.floor(Math.random() * rand_loppu) + rand_alku;
+  if (kentta[rand2] != kultaboxi){
+    kentta[rand2] = "<button class = \"lapio\" style=\"width: " + (gridSize/nappejaRivis) + "px; height:" + (gridSize/nappejaRivis) + "px\" type=\"button\" id=\"butt3\" onclick=\"lapio(this)\" ></button>";
+    lapiot--
+  }
+   
+} 
+
+
+
+//Tämä for looppi rakentaa koko kentän piirtävän koodin aluksi "teksti" muuttujan sisään tekstinä ja sitten printtaa sen sivulle.
+for(y = 0; y < nappejaRivis; y++){
+    if(y == 0){
+        teksti += "<div class=\"pelialue\">";
+        teksti +=    "<p align=\"center\" id=\"scoreboard\">Voittosi on 0 euroa</p>"
+        teksti +=    "<p align=\"center\" id=\"scorex\">Voittokerroin: 1x</p>"
+                // Tässä tulostetaan käyttäjän deposit saldo yhdessä pelikentän kanssa.
+        teksti += "<p align=\"left\" id=\"saldo\">Saldo: </p>";
+        teksti +=   "<table id='table'>";
+    }
+        teksti +=     "<tr>";
+
+        for(x = 0; x < nappejaRivis; x++){
+          teksti +=     "<td>" + kentta[counter] + "</td>";
+            counter++;
+        }
+        teksti +=     "</tr>";
+
+        if(y == (nappejaRivis - 1)){
+          
+        teksti +=  "</table> ";
+        teksti += "<img src=\"kuvat/cashoutnappi.png\" align=\"middle\" class=\"cashOut\" onclick=\"cashOut()\" onmouseover=\"src='kuvat/cashoutnappi_o.png'\" onmouseout=\"src='kuvat/cashoutnappi.png'\"></a>";
+        // tuplausnappi   
+        teksti += "<img src=\"kuvat/kolikko.png\" align=\"middle\" class=\"kolikko\" onclick=\"gambling()\" onmouseover=\"src='kuvat/kolikko2.png'\" onmouseout=\"src='kuvat/kolikko.png'\">";
+
+        teksti += "</div>";
+            
+    }
+}
+//tässä koko koodi printataan sivulle
+body.innerHTML += teksti;
+}
+
+function inforules (){
+document.getElementById("b1").style.display = "none";
+document.getElementById("b2").style.display = "none";
+document.getElementById("b3").style.display = "none";
+document.getElementById("panosOtsikko").style.display = "none";
+document.getElementById("deponappi").style.display = "none";
+document.getElementById("deposit").style.display = "none";
+
+document.getElementById("rules").style.display = "block";
+document.getElementById("info").style.display = "none";
+document.getElementById("back").style.display = "block";
+
+}
+// bonuskierroksen funktio jossa määritellään voiton suuruus
+function coincheck (){
+    yritys = varayritys;
+    document.getElementById("cointoss").style.display = "none";
+    cointoss = Math.floor(Math.random() * 11) + 1;
+    if (cointoss <= 5) {
+        score = score * 2;
+        document.getElementById("cointoss2").style.display = "block";
+        document.getElementById("scoreboard").innerHTML = "<p>Voitit" + " 2x " + "bonuksella " + score + " euroa!" + " Yrityksiä: " + yritys;
+    } else if (cointoss > 5 && cointoss < 9) {
+        score = score * 3;
+        document.getElementById("cointoss3").style.display = "block";
+        document.getElementById("scoreboard").innerHTML = "<p>Voitit" + " 3x " + "bonuksella " + score + " euroa!" + " Yrityksiä: " + yritys;
+    } else if (cointoss > 9 && cointoss < 11 ) {
+        score = score * 4;
+        document.getElementById("cointoss4").style.display = "block";
+        document.getElementById("scoreboard").innerHTML = "<p>Voitit" + " 4x " + "bonuksella " + score + " euroa!" + " Yrityksiä: " + yritys;
+    } else {
+        score = score * 5;
+        document.getElementById("cointoss5").style.display = "block";
+        document.getElementById("scoreboard").innerHTML = "<p>Voitit" + " 5x " + "bonuksella " + score + " euroa!" + " Yrityksiä: " + yritys;
+    }
+    var kolikkosound = new Audio();
+    kolikkosound.src = "kuvat/kolikkosound.mp3";
+    kolikkosound.play();
+    bonus_waiter = 0;
+}
+
+
+function voitto(arvo){
+
+if(yritys>0){
+
+    var winsound = new Audio();
+    winsound.src = "kuvat/aarresound.mp3";
+    winsound.play();
+    del_cointoss();
+    if (yritys != 1) {
+        yritys--;
+    }
+    // bonus_waiter muuttuu 0->1 lapiosta ja -1 ruksista. Jos waiter = 1, aarteen tullessa tässä tiedetään alottaa bonus.
+    if (bonus_waiter == 1) {
+        bonus_waiter += 1;
+        // vaihdetaan yritys arvoksi 0(varayritys ottaa vain talteen arvon), jolloin funktiot voitto, lose ja lapio tietävät estää kentän nappien painaminen bonus.gif ajaksi.
+        varayritys = yritys;
+        yritys = 0;
+// piilotetaan asiaan kuulumattomia kuvakkeita:
+document.getElementById('kolikkotuli').style.display = "block";
+document.getElementById("vidnap").style.display = "none";
+document.getElementById("karttanap").style.display = "none";
+document.getElementById("team").style.display = "none";
+document.getElementById("cointoss").style.display = "block";
+        // tää oli eeppinen tyyli päättää kauan bonus.gif näkyy :D 3sec delay jonka jälkeen suorit: coincheck().
+        window.setTimeout(coincheck, 3000); 
+    } else {
+        bonus_waiter = 0;
+    }
+    arvo.disabled = true; 
+    hutimeni.style = 'display: none';
+    lapiotuli.style = 'display: none';
+    kolikkotuli.style = 'display: none';
+    aarretuli.style = 'display: block';
+        if(score == 0){
+          // ennen pelissä voitti voittosumman * kerroin, sen takii voitot nous pilviin.
+          score = panos * kerroin;
+          kerroin += 1;
+        } else {
+            if (kerroin == 1) {
+            score = score + panos;
+            } else {
+                score = score + (panos * kerroin);
+            }
+    if (kerroin < 5){
+    kerroin += 1;
+    }
+    
+        }
+        document.getElementById("scoreboard").innerHTML = "<p>Aarre löytyi! Voitot: " + score + " e. Yrityksiä: " + yritys;
+        document.getElementById("scorex").innerHTML = "<p>Voittokerroin: " + kerroin + "x";
+        
+    } else { 
+        if (bonus_waiter > 0) {
+            document.getElementById("scoreboard").innerHTML = "<p>Bonuskierros kesken. Voitot: " + score + " euroa!";
+        }
+        if (voitot == 0 || voitot == undefined) {
+        document.getElementById("scoreboard").innerHTML = "<p>Yritykset loppuivat. Voitit 0 euroa.";
+        } else {
+            document.getElementById("scoreboard").innerHTML = "<p>Yritykset loppuivat. Voitit " + voitot + " euroa!";
+        }
+        
+}
+document.getElementById("saldo").innerHTML = "<p>Saldo: " + depovalue;
+}  
+function lapio(arvo){
+    if(yritys>0){
+    var lapiosound = new Audio();
+    lapiosound.src = "kuvat/lapiosound.mp3";
+    lapiosound.play();
+    del_cointoss();
+    aarretuli.style = 'display: none';
+    hutimeni.style = 'display: none';
+    kolikkotuli.style = 'display: none';
+    lapiotuli.style = 'display: block';
+    yritys++;
+    if (kerroin < 5){
+    kerroin += 1;
+    }
+    
+    bonus_waiter = 1;
+      arvo.disabled = true;
+      document.getElementById("scoreboard").innerHTML = "<p>Lapiolla 2 uutta yritystä! Voitot: " + score + " e. Yrityksiä: " + yritys;
+      document.getElementById("scorex").innerHTML = "<p>Voittokerroin: " + kerroin + "x";
+
+
+    }else{ 
+        if (voitot == 0 || voitot == undefined) {
+        document.getElementById("scoreboard").innerHTML = "<p>Yritykset loppuivat. Voitit 0 euroa.";
+        } else {
+            document.getElementById("scoreboard").innerHTML = "<p>Yritykset loppuivat. Voitit " + voitot + " euroa!";
+        }
+    }
+document.getElementById("saldo").innerHTML = "<p>Saldo: " + depovalue;
+}
+function lose(arvo, arvo2){
+    if(yritys>0){
+    del_cointoss();
+    document.getElementById('LogoParrot').style.display = 'block';
+    aarretuli.style = 'display: none';
+    lapiotuli.style = 'display: none';
+    kolikkotuli.style = 'display: none';
+    hutimeni.style = 'display: block';   
+    arvo.disabled = true; 
+      yritys--;
+      bonus_waiter = 0;
+
+      if(yritys>0){
+      document.getElementById("scoreboard").innerHTML = "<p>Ei aarretta. Voitot: " + score + " e. Yrityksiä: " + yritys;
+          
+            if (kerroin != 5 && score > 0) {
+                if (kerroin == 2) {
+                 document.getElementById("scorex").innerHTML = "<p>Voittokerroin: " + kerroin + "x";
+                } else {
+                kerroin -= 1;
+                document.getElementById("scorex").innerHTML = "<p>Voittokerroin: " + kerroin + "x";
+                }
+                }
+            }
+      if (yritys == 0){
+          if (score == 0) {
+        document.getElementById("scoreboard").innerHTML = "<p>Peli ohi. Voitit " + score + " euroa!";
+        document.getElementById("scorex").innerHTML = "<p>--------------------"
+          }
+        
+            voitot = score;
+            if (score > 0 && kerroin > 1) {
+            document.getElementById("scoreboard").innerHTML = "<p>Peli ohi. Voitit " + voitot + " euroa! Gamble mahdollinen.";
+            document.getElementById("scorex").innerHTML = "<p>Gamble-kerroin: " + kerroin + "x";
+            } else {
+                document.getElementById("scoreboard").innerHTML = "<p>Peli ohi. Voitit " + voitot + " euroa."; 
+                document.getElementById("scorex").innerHTML = "<p>";
+            }
+        
+
+          }
+      }
+    document.getElementById("saldo").innerHTML = "<p>Saldo: " + depovalue;
+    }
+function mutePage() {
+   winsound.src = "";
+}
+function del_cointoss() {
+document.getElementById("cointoss2").style.display = "none";
+document.getElementById("cointoss3").style.display = "none";
+document.getElementById("cointoss4").style.display = "none";
+document.getElementById("cointoss5").style.display = "none";
+document.getElementById("vidnap").style.display = "block";
+document.getElementById("karttanap").style.display = "block";
+document.getElementById("team").style.display = "block"; 
+}
+function cashOut() {
+    newGame();
+    while (voitot > 0) {
+        depovalue++;
+        voitot--;
+    }
+    document.getElementById("saldo").innerHTML = "<p>Saldo: " + depovalue;
+    document.getElementById("b1").style.display = "block";
+    document.getElementById("b2").style.display = "block";
+    document.getElementById("b3").style.display = "block";
+   
+}
+function gambling(){
+ if(yritys == 0 && voitot > 0 && kerroin > 1){
+    del_gambleXteksti();
+    dis_onclicks();
+    document.getElementById("gamble_l").style.display = "none";
+    document.getElementById("gamble_w").style.display = "none";
+    document.getElementById("gamble").style.display = "block";
+    setTimeout(gambling_if, 4000);
+    function gambling_if() {
+        var rand = Math.floor(Math.random() * 2) + 1;
+        if (rand==2){
+        voitot = voitot * kerroin;
+        document.getElementById("scoreboard").innerHTML = "<p>Gamble onnistui! Voitit: " + voitot + " euroa!";
+        document.getElementById("gamble_w").style.display = "block";
+        document.getElementById("gamble").style.display = "none";
+        } else {
+        voitot = 0;
+        document.getElementById("scoreboard").innerHTML = "<p>Gamble epäonnistui! Hävisit kaiken.";
+        document.getElementById("gamble_l").style.display = "block";
+        }
+    }
+    }
+}
+// piilottaa kerrointekstin ilman et rivistö muuttuu (jolloin kenttä liikkuu)
+function del_gambleXteksti(){
+    document.getElementById("scorex").innerHTML = "<p>.";
+}
+function dis_onclicks() {
+    var eles = document.getElementsByTagName('img');
+    for (var i=0; i < eles.length; i++) {
+    eles[i].onclick = null;
+    }
+}
+function newGame(){
+    var Parent = document.getElementById("table");
+while(Parent.hasChildNodes())
+{
+   Parent.removeChild(Parent.firstChild);
+}
+}
+
+function ege(){
+    document.getElementById("back").style.display = "none";
+    document.getElementById("info").style.display = "none";
+    document.getElementById("b1").style.display = "none";
+    document.getElementById("b2").style.display = "none";
+    document.getElementById("b3").style.display = "none";
+    panos = 1;
+    nappejaRivis = 5;
+    kenttakoko = 24;
+    rand_loppu = 24;
+    aarteet = 5;
+    yritys = 3;
+    lapiot = 2;
+    createGrid();
+}
+
+function kaks(){
+    document.getElementById("back").style.display = "none";
+    document.getElementById("info").style.display = "none";
+    document.getElementById("b1").style.display = "none";
+    document.getElementById("b2").style.display = "none";
+    document.getElementById("b3").style.display = "none";
+    panos = 2;
+    nappejaRivis = 5;
+    kenttakoko = 24;
+    rand_loppu = 24;
+    aarteet = 5;
+    yritys = 3;
+    lapiot = 1;
+    createGrid();
+}
+function viis(){
+    document.getElementById("back").style.display = "none";
+    document.getElementById("info").style.display = "none";
+    document.getElementById("b1").style.display = "none";
+    document.getElementById("b2").style.display = "none";
+    document.getElementById("b3").style.display = "none";
+    panos = 5;
+    nappejaRivis = 6;
+    kenttakoko = 35;
+    rand_loppu = 35;
+    aarteet = 6;
+    yritys = 3;
+    lapiot = 2;
+    createGrid();
+}
+</script>
+</body>
+</html>
